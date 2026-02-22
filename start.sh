@@ -38,5 +38,6 @@ cp "$PKGDIR/include/ffi.h"       "$OUT/include"
 cp "$PKGDIR/include/ffitarget.h" "$OUT/include"
 
 cd "$DATA"
-tar --transform 's,^data/,,' -czvf "libffi-$VERSION.tar.gz" "$OUT"
+tar --transform 's,^data/,,' --mtime='1970-01-01' --numeric-owner --owner=0 --group=0 --no-xattrs -czvf "libffi-$VERSION.tar.gz" "$OUT"
+
 echo "Done"
