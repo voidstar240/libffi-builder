@@ -1,0 +1,7 @@
+services:
+  libffi-builder:
+    volumes:
+      - ./data:/data
+    build:
+      context: .
+    pull_policy: never
